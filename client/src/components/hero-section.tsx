@@ -41,7 +41,7 @@ export default function HeroSection() {
         </div>
 
         <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-          দ্রুততম ও নিরাপদ Free Fire Diamond টপআপ সেবা। তাৎক্ষণিক ডেলিভারি গ্যারান্টি।
+          আপনার পছন্দের ক্যাটেগরি থেকে Free Fire ডায়মন্ড ও পাস কিনুন। দ্রুততম ও নিরাপদ সেবা। তাৎক্ষণিক ডেলিভারি গ্যারান্টি।
         </p>
         
         {/* Trust Indicators */}

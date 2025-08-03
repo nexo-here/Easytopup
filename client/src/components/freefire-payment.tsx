@@ -7,10 +7,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { Copy, Check, Smartphone, CreditCard, QrCode, CheckCircle, AlertCircle, Zap } from "lucide-react";
-import type { DiamondPackageType } from "@shared/schema";
+import type { DiamondPackageType, TopupPackageType } from "@shared/schema";
 
 interface FreefirePaymentProps {
-  selectedPackage: DiamondPackageType | null;
+  selectedPackage: DiamondPackageType | TopupPackageType | null;
   uid: string;
   playerName: string;
   onPaymentSuccess?: (transactionId: string, method: string) => void;
@@ -216,6 +216,12 @@ export default function FreefirePayment({
                     <span className="text-slate-300">Package:</span>
                     <span className="font-bold text-white">{selectedPackage.name}</span>
                   </div>
+                  {selectedPackage.diamonds && (
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-300">Diamonds:</span>
+                      <span className="font-bold text-yellow-400">{selectedPackage.diamonds}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between items-center">
                     <span className="text-slate-300">Player:</span>
                     <span className="font-mono text-white">{playerName}</span>
@@ -383,8 +389,8 @@ export default function FreefirePayment({
               পেমেন্ট সফল!
             </DialogTitle>
             <DialogDescription className="text-slate-300 text-lg">
-              আপনার {selectedPackage.diamonds} Diamond অর্ডার সফলভাবে সাবমিট হয়েছে। 
-              ১-৫ মিনিটের মধ্যে ডায়মন্ড আপনার অ্যাকাউন্টে পৌঁছে যাবে।
+              আপনার {selectedPackage.diamonds ? `${selectedPackage.diamonds} Diamond` : selectedPackage.name} অর্ডার সফলভাবে সাবমিট হয়েছে। 
+              ১-৫ মিনিটের মধ্যে {selectedPackage.diamonds ? 'ডায়মন্ড' : 'পণ্য'} আপনার অ্যাকাউন্টে পৌঁছে যাবে।
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-center mt-6">
