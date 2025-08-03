@@ -2,7 +2,15 @@
 
 ## Overview
 
-EasyTopUp is a Bengali-language web application designed to provide Free Fire diamond top-up services for Bangladeshi users. The platform allows users to purchase Free Fire diamonds through a simple, user-friendly interface with support for local payment methods. The application features Google authentication, order management, and real-time order tracking functionality.
+EasyTopUp is a Bengali-language web application designed to provide Free Fire diamond top-up services for Bangladeshi users. The platform features a category-based navigation system allowing users to browse different types of top-ups including diamonds, subscriptions, and special offers. The application uses AG TOPUP standardized pricing and supports local payment methods including bKash, Nagad, and Rocket.
+
+## Recent Changes (January 2025)
+
+- **AG TOPUP Integration**: Integrated standardized diamond packages with accurate Bangladeshi Taka pricing
+- **Category System**: Implemented category-based navigation with 7 main categories (Weekly Monthly, Level Up Pass, UID BD/Indonesia, Evo Access, Unipin Code, Lite Offer)
+- **Pricing Structure**: Updated all packages to match AG TOPUP standards (25 Diamond - ৳23 to 5060 Diamond - ৳3120)
+- **API Endpoints**: Created comprehensive backend API for package management and order processing
+- **Package Management**: Added structured package data with validation and JSON export functionality
 
 ## User Preferences
 

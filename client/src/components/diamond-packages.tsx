@@ -10,58 +10,118 @@ interface DiamondPackagesProps {
 
 const packages: DiamondPackageType[] = [
   {
-    id: "100-diamond",
-    name: "১০০ Diamond",
-    diamonds: 100,
-    price: 85,
-    originalPrice: 100,
+    id: "25-diamond",
+    name: "২৫ Diamond",
+    diamonds: 25,
+    price: 23,
     badge: "স্টার্টার",
     badgeColor: "bg-blue-500"
   },
   {
-    id: "310-diamond",
-    name: "৩১০ Diamond",
-    diamonds: 310,
-    price: 250,
-    originalPrice: 280,
-    badge: "জনপ্রিয়",
-    badgeColor: "bg-red-500"
-  },
-  {
-    id: "520-diamond", 
-    name: "৫২০ Diamond",
-    diamonds: 520,
-    price: 400,
-    originalPrice: 450,
-    badge: "সেরা মূল্য",
+    id: "50-diamond",
+    name: "৫০ Diamond",
+    diamonds: 50,
+    price: 37,
+    badge: "নতুন",
     badgeColor: "bg-green-500"
   },
   {
-    id: "1060-diamond",
-    name: "১০৬০ Diamond",
-    diamonds: 1060,
-    price: 800,
-    originalPrice: 900,
-    badge: "বেস্ট সেলার",
-    badgeColor: "bg-yellow-500"
+    id: "115-diamond",
+    name: "১১৫ Diamond",
+    diamonds: 115,
+    price: 78
   },
   {
-    id: "2180-diamond",
-    name: "২১৮০ Diamond",
-    diamonds: 2180,
-    price: 1600,
-    originalPrice: 1800,
-    badge: "প্রিমিয়াম",
+    id: "240-diamond",
+    name: "২৪০ Diamond",
+    diamonds: 240,
+    price: 158
+  },
+  {
+    id: "355-diamond",
+    name: "৩৫৫ Diamond",
+    diamonds: 355,
+    price: 235
+  },
+  {
+    id: "480-diamond",
+    name: "৪৮০ Diamond",
+    diamonds: 480,
+    price: 313
+  },
+  {
+    id: "505-diamond",
+    name: "৫০৫ Diamond",
+    diamonds: 505,
+    price: 348,
+    badge: "জনপ্রিয়",
+    badgeColor: "bg-orange-500"
+  },
+  {
+    id: "610-diamond",
+    name: "৬১০ Diamond",
+    diamonds: 610,
+    price: 397
+  },
+  {
+    id: "850-diamond",
+    name: "৮৫০ Diamond",
+    diamonds: 850,
+    price: 548
+  },
+  {
+    id: "1090-diamond",
+    name: "১০৯০ Diamond",
+    diamonds: 1090,
+    price: 730,
+    badge: "বেস্ট সেলার",
     badgeColor: "bg-purple-500"
   },
   {
-    id: "5600-diamond",
-    name: "৫৬০০ Diamond",
-    diamonds: 5600,
-    price: 4000,
-    originalPrice: 4500,
-    badge: "আল্টিমেট",
-    badgeColor: "bg-gradient-to-r from-yellow-400 to-orange-500"
+    id: "1240-diamond",
+    name: "১২৪০ Diamond",
+    diamonds: 1240,
+    price: 788
+  },
+  {
+    id: "1850-diamond",
+    name: "১৮৫০ Diamond",
+    diamonds: 1850,
+    price: 1170
+  },
+  {
+    id: "2090-diamond",
+    name: "২০৯০ Diamond",
+    diamonds: 2090,
+    price: 1330
+  },
+  {
+    id: "2530-diamond",
+    name: "২৫৩০ Diamond",
+    diamonds: 2530,
+    price: 1560,
+    badge: "বেস্ট ভ্যালু",
+    badgeColor: "bg-yellow-500"
+  },
+  {
+    id: "3770-diamond",
+    name: "৩৭৭০ Diamond",
+    diamonds: 3770,
+    price: 2360
+  },
+  {
+    id: "4010-diamond",
+    name: "৪০১০ Diamond",
+    diamonds: 4010,
+    price: 2490
+  },
+  {
+    id: "5060-diamond",
+    name: "৫০৬০ Diamond",
+    diamonds: 5060,
+    price: 3120,
+    badge: "প্রিমিয়াম",
+    badgeColor: "bg-red-500"
   }
 ];
 

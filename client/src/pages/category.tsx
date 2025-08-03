@@ -54,61 +54,166 @@ const categoryPackages: Record<string, TopupPackageType[]> = {
     {
       id: "bd-1",
       categoryId: "uid-topup-bd",
-      name: "বেসিক প্যাক",
-      nameEn: "Basic Pack",
-      diamonds: 100,
-      price: 280,
+      name: "২৫ Diamond",
+      nameEn: "25 Diamond",
+      diamonds: 25,
+      price: 23,
+      badge: "স্টার্টার",
+      badgeColor: "bg-blue-500",
       description: "নতুন খেলোয়াড়দের জন্য"
     },
     {
       id: "bd-2",
-      categoryId: "uid-topup-bd", 
-      name: "পপুলার প্যাক",
-      nameEn: "Popular Pack",
-      diamonds: 310,
-      price: 850,
-      badge: "জনপ্রিয়",
+      categoryId: "uid-topup-bd",
+      name: "৫০ Diamond",
+      nameEn: "50 Diamond",
+      diamonds: 50,
+      price: 37,
+      badge: "নতুন",
       badgeColor: "bg-green-500",
-      description: "সবচেয়ে বিক্রিত প্যাকেজ"
+      description: "সাশ্রয়ী প্যাকেজ"
     },
     {
       id: "bd-3",
       categoryId: "uid-topup-bd",
-      name: "স্ট্যান্ডার্ড প্যাক", 
-      nameEn: "Standard Pack",
-      diamonds: 520,
-      price: 1400,
-      description: "মাঝারি খেলোয়াড়দের জন্য"
+      name: "১১৫ Diamond",
+      nameEn: "115 Diamond",
+      diamonds: 115,
+      price: 78,
+      description: "মাঝারি প্যাকেজ"
     },
     {
       id: "bd-4",
       categoryId: "uid-topup-bd",
-      name: "প্রো প্যাক",
-      nameEn: "Pro Pack", 
-      diamonds: 1060,
-      price: 2800,
-      description: "দক্ষ খেলোয়াড়দের জন্য"
+      name: "২৪০ Diamond",
+      nameEn: "240 Diamond",
+      diamonds: 240,
+      price: 158,
+      description: "জনপ্রিয় প্যাকেজ"
     },
     {
       id: "bd-5",
       categoryId: "uid-topup-bd",
-      name: "এলিট প্যাক",
-      nameEn: "Elite Pack",
-      diamonds: 2180,
-      price: 5600,
+      name: "৩৫৫ Diamond",
+      nameEn: "355 Diamond",
+      diamonds: 355,
+      price: 235,
+      description: "স্ট্যান্ডার্ড প্যাকেজ"
+    },
+    {
+      id: "bd-6",
+      categoryId: "uid-topup-bd",
+      name: "৪৮০ Diamond",
+      nameEn: "480 Diamond",
+      diamonds: 480,
+      price: 313,
+      description: "ভালো মূল্যের প্যাকেজ"
+    },
+    {
+      id: "bd-7",
+      categoryId: "uid-topup-bd",
+      name: "৫০৫ Diamond",
+      nameEn: "505 Diamond",
+      diamonds: 505,
+      price: 348,
+      badge: "জনপ্রিয়",
+      badgeColor: "bg-orange-500",
+      description: "সবচেয়ে বিক্রিত প্যাকেজ"
+    },
+    {
+      id: "bd-8",
+      categoryId: "uid-topup-bd",
+      name: "৬১০ Diamond",
+      nameEn: "610 Diamond",
+      diamonds: 610,
+      price: 397,
+      description: "উন্নত প্যাকেজ"
+    },
+    {
+      id: "bd-9",
+      categoryId: "uid-topup-bd",
+      name: "৮৫০ Diamond",
+      nameEn: "850 Diamond",
+      diamonds: 850,
+      price: 548,
+      description: "প্রিমিয়াম প্যাকেজ"
+    },
+    {
+      id: "bd-10",
+      categoryId: "uid-topup-bd",
+      name: "১০৯০ Diamond",
+      nameEn: "1090 Diamond",
+      diamonds: 1090,
+      price: 730,
+      badge: "বেস্ট সেলার",
+      badgeColor: "bg-purple-500",
+      description: "দক্ষ খেলোয়াড়দের জন্য"
+    },
+    {
+      id: "bd-11",
+      categoryId: "uid-topup-bd",
+      name: "১২৪০ Diamond",
+      nameEn: "1240 Diamond",
+      diamonds: 1240,
+      price: 788,
+      description: "উচ্চ-মানের প্যাকেজ"
+    },
+    {
+      id: "bd-12",
+      categoryId: "uid-topup-bd",
+      name: "১৮৫০ Diamond",
+      nameEn: "1850 Diamond",
+      diamonds: 1850,
+      price: 1170,
+      description: "বড় প্যাকেজ"
+    },
+    {
+      id: "bd-13",
+      categoryId: "uid-topup-bd",
+      name: "২০৯০ Diamond",
+      nameEn: "2090 Diamond",
+      diamonds: 2090,
+      price: 1330,
+      description: "মেগা প্যাকেজ"
+    },
+    {
+      id: "bd-14",
+      categoryId: "uid-topup-bd",
+      name: "২৫৩০ Diamond",
+      nameEn: "2530 Diamond",
+      diamonds: 2530,
+      price: 1560,
       badge: "বেস্ট ভ্যালু",
       badgeColor: "bg-yellow-500",
       description: "সর্বোচ্চ সাশ্রয়"
     },
     {
-      id: "bd-6",
+      id: "bd-15",
       categoryId: "uid-topup-bd",
-      name: "লেজেন্ড প্যাক",
-      nameEn: "Legend Pack",
-      diamonds: 5600,
-      price: 14000,
+      name: "৩৭৭০ Diamond",
+      nameEn: "3770 Diamond",
+      diamonds: 3770,
+      price: 2360,
+      description: "সুপার প্যাকেজ"
+    },
+    {
+      id: "bd-16",
+      categoryId: "uid-topup-bd",
+      name: "৪০১০ Diamond",
+      nameEn: "4010 Diamond",
+      diamonds: 4010,
+      price: 2490,
+      description: "আল্ট্রা প্যাকেজ"
+    },
+    {
+      id: "bd-17",
+      categoryId: "uid-topup-bd",
+      name: "৫০৬০ Diamond",
+      nameEn: "5060 Diamond",
+      diamonds: 5060,
+      price: 3120,
       badge: "প্রিমিয়াম",
-      badgeColor: "bg-red-500", 
+      badgeColor: "bg-red-500",
       description: "পেশাদার খেলোয়াড়দের জন্য"
     }
   ],
