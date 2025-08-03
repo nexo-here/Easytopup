@@ -52,7 +52,7 @@ const categoryPackages: Record<string, TopupPackageType[]> = {
     {
       id: "combo-4",
       categoryId: "weekly-monthly",
-      name: "সাপ্তাহিক + মাসিক সাবস্ক্রিপশন",
+      name: "Weekly+Monthly",
       nameEn: "Weekly + Monthly Subscription",
       price: 600,
       originalPrice: 915,
