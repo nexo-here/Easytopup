@@ -6,8 +6,10 @@ import {
   getPackagesByCategory,
   getDiamondPackages,
   getSubscriptionPackages,
+  getComboPackages,
   getPackageById,
-  validatePricing
+  validatePricing,
+  validateComboPricing
 } from "@shared/topup-packages";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -64,7 +66,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
 
-  // Get package by ID
+  // Get combo packages only
+  app.get("/api/packages/combos", (req, res) => {
+    const packages = getComboPackages();
+    
+    res.json({
+      success: true,
+      data: packages,
+      total: packages.length
+    });
+  });
+
+  // AG TOPUP JSON format endpoint (for external integrations)
+  app.get("/api/packages/json", (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(agTopupPackagesJSON);
+  });
+
+  // Get package by ID (moved after specific routes to avoid conflicts)
   app.get("/api/packages/:packageId", (req, res) => {
     const { packageId } = req.params;
     const package_data = getPackageById(packageId);
@@ -105,10 +124,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
 
-  // AG TOPUP JSON format endpoint (for external integrations)
-  app.get("/api/packages/json", (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(agTopupPackagesJSON);
+  // Validate combo package pricing with discount information
+  app.post("/api/packages/validate-combo", (req, res) => {
+    const { packageId, expectedPrice } = req.body;
+    
+    if (!packageId || typeof expectedPrice !== "number") {
+      return res.status(400).json({
+        success: false,
+        error: "Package ID and expected price are required"
+      });
+    }
+
+    const validation = validateComboPricing(packageId, expectedPrice);
+    const package_data = getPackageById(packageId);
+    
+    res.json({
+      success: true,
+      ...validation,
+      package: package_data,
+      expectedPrice
+    });
   });
 
   // Order processing endpoint (placeholder for payment integration)

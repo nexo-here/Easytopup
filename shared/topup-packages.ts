@@ -2,6 +2,56 @@ import type { TopupPackageType } from "./schema";
 
 // AG TOPUP standardized diamond packages with accurate Bangladeshi Taka pricing
 export const agTopupPackages: TopupPackageType[] = [
+  // Combo Offers - Special Discount Packages
+  {
+    id: "combo-1240",
+    categoryId: "weekly-monthly",
+    name: "১২৪০ Diamond কম্বো",
+    nameEn: "1240 Diamond Combo",
+    diamonds: 1240,
+    price: 350,
+    originalPrice: 788,
+    badge: "কম্বো অফার",
+    badgeColor: "bg-red-500",
+    description: "স্পেশাল ডিসকাউন্ট অফার"
+  },
+  {
+    id: "combo-2560",
+    categoryId: "weekly-monthly",
+    name: "২৫৬০ Diamond কম্বো",
+    nameEn: "2560 Diamond Combo",
+    diamonds: 2560,
+    price: 610,
+    originalPrice: 1560,
+    badge: "কম্বো অফার",
+    badgeColor: "bg-red-500",
+    description: "মেগা ডিসকাউন্ট অফার"
+  },
+  {
+    id: "combo-5060",
+    categoryId: "weekly-monthly",
+    name: "৫০৬০ Diamond কম্বো",
+    nameEn: "5060 Diamond Combo",
+    diamonds: 5060,
+    price: 1250,
+    originalPrice: 3120,
+    badge: "কম্বো অফার",
+    badgeColor: "bg-red-500",
+    description: "আল্টিমেট ডিসকাউন্ট অফার"
+  },
+  {
+    id: "combo-subscription",
+    categoryId: "weekly-monthly",
+    name: "সাপ্তাহিক + মাসিক সাবস্ক্রিপশন",
+    nameEn: "Weekly + Monthly Subscription",
+    price: 600,
+    originalPrice: 915,
+    badge: "সাবস্ক্রিপশন কম্বো",
+    badgeColor: "bg-purple-500",
+    description: "সাপ্তাহিক + মাসিক প্ল্যান একসাথে",
+    validity: "৩০ দিনের জন্য বৈধ"
+  },
+
   // Subscription Plans
   {
     id: "weekly-subscription",
@@ -214,10 +264,34 @@ export const getSubscriptionPackages = (): TopupPackageType[] => {
   return agTopupPackages.filter(pkg => pkg.categoryId === "subscription");
 };
 
+// Get combo packages only
+export const getComboPackages = (): TopupPackageType[] => {
+  return agTopupPackages.filter(pkg => pkg.categoryId === "weekly-monthly");
+};
+
 // Pricing validation function
 export const validatePricing = (packageId: string, expectedPrice: number): boolean => {
   const pkg = agTopupPackages.find(p => p.id === packageId);
   return pkg ? pkg.price === expectedPrice : false;
+};
+
+// Special validation for combo packages with discount pricing
+export const validateComboPricing = (packageId: string, expectedPrice: number): { valid: boolean, actualPrice?: number, originalPrice?: number, discount?: number } => {
+  const pkg = agTopupPackages.find(p => p.id === packageId);
+  
+  if (!pkg) {
+    return { valid: false };
+  }
+
+  const valid = pkg.price === expectedPrice;
+  const discount = pkg.originalPrice ? Math.round(((pkg.originalPrice - pkg.price) / pkg.originalPrice) * 100) : 0;
+
+  return {
+    valid,
+    actualPrice: pkg.price,
+    originalPrice: pkg.originalPrice,
+    discount
+  };
 };
 
 // Get package by ID
