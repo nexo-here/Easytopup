@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { signInWithGoogle, signOutUser } from "@/lib/firebase";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
+import DarkModeToggle from "@/components/dark-mode-toggle";
 import { useState } from "react";
 
 export default function Header() {
@@ -47,7 +48,8 @@ export default function Header() {
           </nav>
 
           {/* User Profile / Login */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
+            <DarkModeToggle />
             {loading ? (
               <div className="w-8 h-8 bg-slate-700 rounded-full animate-pulse"></div>
             ) : user ? (

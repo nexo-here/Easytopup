@@ -2,8 +2,8 @@ import { useState } from "react";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import DiamondPackages from "@/components/diamond-packages";
-import PlayerInfo from "@/components/player-info";
-import PaymentSection from "@/components/payment-section";
+import FreefireUidInput from "@/components/freefire-uid-input";
+import FreefirePayment from "@/components/freefire-payment";
 import UserDashboard from "@/components/user-dashboard";
 import Footer from "@/components/footer";
 import { useAuth } from "@/hooks/use-auth";
@@ -12,13 +12,15 @@ import type { DiamondPackageType } from "@shared/schema";
 export default function Home() {
   const { user } = useAuth();
   const [selectedPackage, setSelectedPackage] = useState<DiamondPackageType | null>(null);
-  const [playerId, setPlayerId] = useState("");
+  const [uid, setUid] = useState("");
   const [playerName, setPlayerName] = useState("");
 
-  const handleOrderComplete = () => {
-    // Reset form after successful order
+  const handlePaymentSuccess = (transactionId: string, method: string) => {
+    console.log(`Payment successful: ${transactionId} via ${method}`);
+    
+    // Reset form after successful payment
     setSelectedPackage(null);
-    setPlayerId("");
+    setUid("");
     setPlayerName("");
     
     // Scroll to user dashboard if logged in
@@ -33,7 +35,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-slate-900 dark:bg-slate-900 text-white">
       <Header />
       
       <main>
@@ -46,19 +48,18 @@ export default function Home() {
           onSelectPackage={setSelectedPackage}
         />
         
-        <PlayerInfo 
-          selectedPackage={selectedPackage}
-          playerId={playerId}
-          setPlayerId={setPlayerId}
+        <FreefireUidInput 
+          uid={uid}
+          setUid={setUid}
           playerName={playerName}
           setPlayerName={setPlayerName}
         />
         
-        <PaymentSection 
+        <FreefirePayment 
           selectedPackage={selectedPackage}
-          playerId={playerId}
+          uid={uid}
           playerName={playerName}
-          onOrderComplete={handleOrderComplete}
+          onPaymentSuccess={handlePaymentSuccess}
         />
         
         {user && (
